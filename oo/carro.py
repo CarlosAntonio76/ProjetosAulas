@@ -79,20 +79,41 @@ Exemplo:
 >>> carro.calcular_velocidade()
 0
 >>> carro.calcular_direcao()
->>> 'Norte'
-
->>> carro.calcular_direita()
+'Norte'
+>>> carro.girar_a_direita()
 >>> carro.calcular_direcao()
->>> 'Leste'
-
->>> carro.calcular_esquerda()
+'Leste'
+>>> carro.girar_a_esquerda()
 >>> carro.calcular_direcao()
->>> 'Norte'
-
->>> carro.calcular_esquerda()
+'Norte'
+>>> carro.girar_a_esquerda()
 >>> carro.calcular_direcao()
->>> 'Oeste'
+'Oeste'
 """
+
+class Carro:
+    def __init__(self, direcao, motor):
+        self.direcao = direcao
+        self.motor = motor
+
+    def calcular_velocidade(self):
+        return self.motor.velocidade
+
+    def acelerar(self):
+        self.motor.acelerar()
+
+    def frear(self):
+        self.motor.frear()
+
+    def calcular_direcao(self):
+        return self. direcao.valor
+
+    def girar_a_direita(self):
+        self.direcao.girar_a_direita()
+
+    def girar_a_esquerda(self):
+        self.direcao.girar_a_esquerda()
+
 
 NORTE = 'Norte'
 SUL = 'Sul'
@@ -119,6 +140,7 @@ class Direcao:
         #    self.valor = SUL
         #elif self.valor == SUL:
         #    self.valor = OESTE
+
     def girar_a_esquerda(self):
         self.valor = self.rotacao_a_esquerda_dct[self.valor]
 
